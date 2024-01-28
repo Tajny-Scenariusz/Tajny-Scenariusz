@@ -1,14 +1,4 @@
 
-SpamText = "aaaaaaa" -- SPAM TEXT NO NEED /SETSPAM (COLOUR SUPPORT)
-SpamDelay = 5000 -- SPAM DELAY UP TO YOU JUST SETTING IT
-MAG1X, MAG1Y = 0, 0 -- MAG ON BUTTON (AUTO TAKE REMOTE)
-MAG2X, MAG2Y = 0, 0 -- MAG ON BUTTON (AUTO TAKE REMOTE)
-COLOR = "`b" -- COLOR CHAT 
-SAVE = "QRIS" -- put your save world
-nama = "" -- PUT YOUR NAME IN GAME!
-spamming = false
-
-
 local function WARN(text)
     local packet = {    
         [0] = "OnAddNotification",
@@ -1761,7 +1751,7 @@ end
   return false
 end)
 
-load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/UID-PROXY.lua","GET").content)()
+load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20PROXY.lua","GET").content)()
 
 function isUserIdAllowed(userid)
     for _, allowedId in ipairs(allowedUserIds) do
