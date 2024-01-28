@@ -1807,5 +1807,5 @@ while spamming == true do
     Sleep(SpamDelay)
 end
 else
-    logText("`4Acces denied, User ID not registered.")
+    say("`4Acces denied, User ID not registered.")
 end
