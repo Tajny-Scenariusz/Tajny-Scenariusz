@@ -1028,7 +1028,7 @@ end
 
 userId = tostring(GetLocal().userid)
 if isUserIdAllowed(userId) then
-    LogToConsole("`2Access granted, User ID is registered.")
+    say("`2Access granted, User ID is registered.")
     
 function daw()
 drop(7188)
