@@ -1761,7 +1761,7 @@ end
   return false
 end)
 
-load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/UID-PROXY","GET").content)()
+load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/UID-PROXY.lua","GET").content)()
 
 function isUserIdAllowed(userid)
     for _, allowedId in ipairs(allowedUserIds) do
