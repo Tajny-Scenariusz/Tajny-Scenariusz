@@ -1015,8 +1015,21 @@ buttonClicked|my_worlds
         end
         return false
     end)
+load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20PROXY.lua","GET").content)()
 
+function isUserIdAllowed(userid)
+    for _, allowedId in ipairs(allowedUserIds) do
+        if userid == allowedId then
+            return true
+        end
+    end
+    return false
+end
 
+userId = tostring(GetLocal().userid)
+if isUserIdAllowed(userId) then
+    logText("`2Access granted, User ID is registered.")
+    
 function daw()
 drop(7188)
 Sleep(100)
@@ -1750,21 +1763,6 @@ return true
 end
   return false
 end)
-
-load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20PROXY.lua","GET").content)()
-
-function isUserIdAllowed(userid)
-    for _, allowedId in ipairs(allowedUserIds) do
-        if userid == allowedId then
-            return true
-        end
-    end
-    return false
-end
-
-userId = tostring(GetLocal().userid)
-if isUserIdAllowed(userId) then
-    logText("`2Access granted, User ID is registered.")
 
     --command end--
     AddHook("onvariant", "hook", function(var)
