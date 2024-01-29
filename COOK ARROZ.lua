@@ -208,7 +208,7 @@ function move(x,y)
     FindPath(math.floor(GetLocal().pos.x /32+x),math.floor(GetLocal().pos.y /32+y),50)
 end
 
-load(MakeRequest("https://raw.githubusercontent.com/4RRab/Buyer/main/ID%20PNB.lua","GET").content)()
+load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20ARROZ","GET").content)()
 
 function isUserIdAllowed(userid)
     for _, allowedId in ipairs(allowedUserIds) do
