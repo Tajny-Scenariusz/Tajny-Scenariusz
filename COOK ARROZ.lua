@@ -223,10 +223,10 @@ userId = tostring(GetLocal().userid)
 if isUserIdAllowed(userId) then
 LogToConsole("`2Access granted, User ID is registered.")
 Sleep(800)
-say("`bAuto Cook Arroz `0by : `2@Secret.Community")
+say("`bAuto Cook Arroz `0by : `2@PAHRI")
 Sleep(1000)
-SendPacket(2, "action|input\ntext|`pAuto Cook Arroz by : `2@Secret.Community")
-FChat("`9Execute `2AUTO COOK ARROZ by : `2@Secret.Community")
+SendPacket(2, "action|input\ntext|`pAuto Cook Arroz by : `2@PAHRI")
+FChat("`9Execute `2AUTO COOK ARROZ by : `2@PAHRI")
 Sleep(2000)
 FChat("`4Wear Knife Sushi")
 Sleep(2000)
@@ -253,7 +253,7 @@ while true do
             SendPacket(2,"action|dialog_return\ndialog_name|grinder\nx|"..math.floor(GetLocal().pos.x / 32).."|\ny|"..math.floor(GetLocal().pos.y / 32).."|\nitemID|4566|\namount|1")
             Sleep(4000)
         end
-        FChat("[`cSecret.Community `pby PAHRI`0] `4found "..findItem(4568).." salt")
+        FChat("[`cCook Arroz `pby PAHRI`0] `4found "..findItem(4568).." salt")
     end
 	
     if findItem(4568) >= 40 and findItem(4566) > 0 then
@@ -274,7 +274,7 @@ while true do
             SendPacket(2,"action|dialog_return\ndialog_name|grinder\nx|"..math.floor(GetLocal().pos.x / 32).."|\ny|"..math.floor(GetLocal().pos.y / 32).."|\nitemID|4584|\namount|1")
             Sleep(4000)
         end
-        FChat("[`cSecret.Community `pby PAHRI`0] `4found "..findItem(4570).." pepper")
+        FChat("[`cCook Arroz `pby PAHRI`0] `4found "..findItem(4570).." pepper")
     end
 	
     if findItem(4570) > 60 and findItem(4584) > 0 then
