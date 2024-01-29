@@ -199,7 +199,7 @@ end
 local function logText(text)
     packet = {}
     packet[0] = "OnConsoleMessage"
-    packet[1] = "`b[`#@4Rab`b]`6 ".. text
+    packet[1] = "`b[`#@PAHRI`b]`6 ".. text
     SendVariantList(packet)
 end
 
