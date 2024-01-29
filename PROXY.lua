@@ -1015,21 +1015,7 @@ buttonClicked|my_worlds
         end
         return false
     end)
-load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20PROXY.lua","GET").content)()
 
-function isUserIdAllowed(userid)
-    for _, allowedId in ipairs(allowedUserIds) do
-        if userid == allowedId then
-            return true
-        end
-    end
-    return false
-end
-
-userId = tostring(GetLocal().userid)
-if isUserIdAllowed(userId) then
-    say("`2Access granted, User ID is registered.")
-    
 function daw()
 drop(7188)
 Sleep(100)
@@ -1793,11 +1779,24 @@ end
     SendVariantList(packet)
 end
 
-say("`bProxy `0was injected `2successfully")
-Sleep(800)
-say("`bProxy `0by "..insta.."")
-menuu()
+load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20PROXY.lua","GET").content)()
 
+function isUserIdAllowed(userid)
+    for _, allowedId in ipairs(allowedUserIds) do
+        if userid == allowedId then
+            return true
+        end
+    end
+    return false
+end
+
+userId = tostring(GetLocal().userid)
+if isUserIdAllowed(userId) then
+    LogToConsole("`2Access granted, User ID is registered.")
+    Sleep(800)
+    say("`bProxy `0by "..insta.."")
+    menuu()
+    
 function say(txt)
 SendPacket(2,"action|input\ntext|"..txt)
 end
@@ -1807,5 +1806,5 @@ while spamming == true do
     Sleep(SpamDelay)
 end
 else
-    say("`4Acces denied, User ID not registered.")
+    LogToConsole("`4Acces denied, User ID not registered.")
 end
