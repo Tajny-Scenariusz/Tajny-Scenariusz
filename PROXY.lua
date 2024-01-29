@@ -1792,7 +1792,7 @@ end
 
 userId = tostring(GetLocal().userid)
 if isUserIdAllowed(userId) then
-    LogToConsole("`2Access granted, User ID is registered.")
+    say("`2Access granted, User ID is registered.")
     Sleep(800)
     say("`bProxy `0by "..insta.."")
     menuu()
@@ -1806,5 +1806,5 @@ while spamming == true do
     Sleep(SpamDelay)
 end
 else
-    LogToConsole("`4Acces denied, User ID not registered.")
+    say("`4Acces denied, User ID not registered.")
 end
