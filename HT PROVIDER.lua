@@ -158,12 +158,12 @@ end
 
 userId = tostring(GetLocal().userid)
 if isUserIdAllowed(userId) then
-    logText("`2Access granted, User ID is registered.")
+    LogToConsole("`2Access granted, User ID is registered.")
 
 while true do
 harvest()
 end
 
 else
-  logText("`4Acces denied, User ID not registered.")
+  LogToConsole("`4Acces denied, User ID not registered.")
 end
