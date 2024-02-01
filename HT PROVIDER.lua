@@ -21,20 +21,7 @@ function punch(x, y)
   end
   Sleep(100)
 end
-SendPacket(2, "action|input\ntext|`2[`bdiscord.gg/anubeast`2] `9YOUR UID REGISTERED! : `b "..UID.."")
 Sleep(1000)
-SendPacket(2, "action|input\ntext|`9Auto Harvest Provider by `2[`bdiscord.gg/anubeast`2]")
-
-
-AddHook("onvariant", 1, printa)
-function FChat(txt)
-  p = {}
-  p[0] = "OnTextOverlay"
-  p[1] = txt
-  SendVariantList(p)
-end
-Sleep(1000)
-
 function IsReady(tile)
   if tile and tile.extra and tile.extra.progress and tile.extra.progress == 1.0 then
     return true
