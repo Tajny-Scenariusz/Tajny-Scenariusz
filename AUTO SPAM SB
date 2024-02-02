@@ -30,7 +30,7 @@ SendPacket(2, "action|input\ntext|/me `^SB Appear in `g2")
 Sleep(1000)
 SendPacket(2, "action|input\ntext|/me `^SB Appear in `g1")
 Sleep(2000)
-SendPacket(2, "action|input\ntext|/me `gAUTO SB by `4[`gSECRET COMMUNITY`4]")
+SendPacket(2, "action|input\ntext|/me `gAUTO SB by `4[`bSECRET COMMUNITY`4]")
 Sleep(2000)
 
 -- WEBHOOK
