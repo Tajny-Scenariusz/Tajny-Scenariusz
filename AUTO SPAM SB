@@ -78,7 +78,7 @@ SendWebhook(myLink, myData)
         SendPacket(2, "action|input\ntext|/sb ".. Text)
          hitung = hitung + 1
         Sleep(1000)
-        SendPacket(2, "action|input\ntext|Super Broadcasts from "..BY.." (megaphone) `8#"..hitung)
+        SendPacket(2, "action|input\ntext|`gSuper Broadcasts From : "..BY.." `g["..hitung.."/"..total.."] (megaphone)")
         Sleep(90500)
     end
     if hitung == total then 
