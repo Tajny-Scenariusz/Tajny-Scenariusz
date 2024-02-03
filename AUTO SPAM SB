@@ -1,5 +1,5 @@
 
-hitung = 0  -- Dont Touch!
+
 local WEBHOOK = "https://discord.com/api/webhooks/1188691784851800154/SjUZnkk7X9nKwOVS4zQJKs_GHTzK6H50q7NZmc2NCF0kbuniqtRlJIBXHNXd6hnyAXfr"
 local gems = GetPlayerInfo().gems
 AddHook("onvariant", "hook", function(var)
