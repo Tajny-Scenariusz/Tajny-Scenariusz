@@ -75,7 +75,7 @@ if isUserIdAllowed(userId) then
         end
 
         Sleep(1000)
-        SendPacket(2, "action|input\ntext|`2=====`gSuper Broadcasts`2===== `2==`g[`b"..hitung.." `gmin`g/ `b"..total.." `gmin] `g[`b"..Count.." Left`g]`2== `gBy : "..BY.."  (megaphone)")
+        SendPacket(2, "action|input\ntext|`g[`b"..hitung.."`gmin`g/`b"..total.."`gmin]`g[`b"..Count.."Left`g] `2Super Broadcasts `BBy : "..BY.." (megaphone)")
         SendWebhook(myLink, myData)
         Sleep(90500)
 
