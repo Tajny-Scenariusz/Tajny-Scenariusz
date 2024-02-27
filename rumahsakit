@@ -1,0 +1,260 @@
+function FChat(txt)
+  p = {}
+  p[0] = "OnTextOverlay"
+  p[1] = txt
+  SendVariantList(p)
+end
+
+function findItem(id)
+    for _, itm in pairs(GetInventory()) do
+        if itm.id == id then
+            return itm.amount
+        end    
+    end
+    return 0
+end
+
+load(MakeRequest("https://raw.githubusercontent.com/Tajny-Scenariusz/Tajny-Scenariusz/main/ID%20PENYEMBUHAN.lua","GET").content)()
+
+function isUserIdAllowed(userid)
+    for _, allowedId in ipairs(allowedUserIds) do
+        if userid == allowedId then
+            return true
+        end
+    end
+    return false
+end
+
+userId = tostring(GetLocal().userid)
+if isUserIdAllowed(userId) then
+    LogToConsole("`2Access granted, User ID is registered.")
+FChat("`2Auto Surgery By Secret Community")
+AddHook("onvariant", "surg", function(var)
+if var[0]:find("OnDialogRequest") and var[1]:find("Status: `4Awake(.+)")then
+    if findItem(1262) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_2
+]])
+        LogToConsole("`1[SC]`2Using AnesThetic")
+    else
+        FChat("`2you don't have enough AnesThetic")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("end_dialog|surge_edit")then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surge_edit
+x|]]..var[1]:match("embed_data|x|(%d+)")..[[|
+y|]]..var[1]:match("embed_data|y|(%d+)")..[[|
+]])
+LogToConsole("`1[SC]`4Auto Surgery Start")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("end_dialog|popup")then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|popup
+netID|]]..var[1]:match("embed_data|netID|(%d+)")..[[|
+buttonClicked|surgery
+]])
+LogToConsole("`1[SC]`4Auto Surgery Start")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("`4You can't see what you are doing!(.+)")then
+if findItem(1258) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_0
+]])
+LogToConsole("`1[SC]`2Using Sponge")
+    else
+        FChat("`2you don't have enough Sponge")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Patient's fever is `3slowly rising.")then
+if findItem(1266) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_4
+]])
+LogToConsole("`1[SC]`2Using Antibiotics")
+    else
+        FChat("`2you don't have enough Antibiotics")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Patient's fever is `6climbing.")then
+if findItem(1266) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_4
+]])
+LogToConsole("`1[SC]`2Using Antibiotics")
+    else
+        FChat("`2you don't have enough Antibiotics")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Patient's fever is `4climbing rapidly!.")then
+if findItem(1266) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_4
+]])
+LogToConsole("`1[SC]`2Using Antibiotics")
+    else
+        FChat("`2you don't have enough Antibiotics")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Operation site: `3Not sanitized")then
+if findItem(1264) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_3
+]])
+LogToConsole("`1[SC]`2Using Antiseptic")
+    else
+        FChat("`2you don't have enough Antiseptic")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Operation site: `6Unclean")then
+if findItem(1264) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_3
+]])
+LogToConsole("`1[SC]`2Using Antiseptic")
+    else
+        FChat("`2you don't have enough Antiseptic")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Operation site: `4Unsanitary")then
+if findItem(1264) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_3
+]])
+LogToConsole("`1[SC]`2Using Antiseptic")
+    else
+        FChat("`2you don't have enough Antiseptic")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("`6It is becoming hard to see your work.")then
+if findItem(1258) > 1 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_0
+]])
+LogToConsole("`1[SC]`2Using Sponge")
+    else
+        FChat("`2you don't have enough Sponge")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Patient is losing blood `4very quickly!")then
+if findItem(1270) > 1 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_6
+]])
+LogToConsole("`1[SC]`9Using Stitches")
+    else
+        FChat("`2you don't have enough Stitches")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Patient is `6losing blood!")then
+if findItem(1270) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_6
+]])
+LogToConsole("`1[SC]`9Using Stitches")
+    else
+        FChat("`2you don't have enough Stitches")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("Patient is losing blood `3slowly")then
+if findItem(1270) > 1 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_6
+]])
+LogToConsole("`1[SC]`9Using Stitches")
+    else
+        FChat("`2you don't have enough Stitches")
+    end
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1296") and var[1]:find("Incisions: `30(.+)")  then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_7
+]])
+LogToConsole("`1[SC]`2Using Fix It!")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1296") and var[1]:find("Incisions: `31(.+)")  then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_7
+]])
+LogToConsole("`1[SC]`2Using Fix It!")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1296") and var[1]:find("Incisions: `32(.+)")  then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_7
+]])
+LogToConsole("`1[SC]`2Using Fix It!")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1296") and var[1]:find("Incisions: `33(.+)")  then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_7
+]])
+LogToConsole("`1[SC]`2Using Fix It!")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1296") and var[1]:find("Incisions: `44(.+)")  then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_7
+]])
+LogToConsole("`1[SC]`2Using Fix It!")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1296") and var[1]:find("Incisions: `45(.+)")  then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_7
+]])
+LogToConsole("`1[SC]`2Using Fix It!")
+return true
+elseif var[0]:find("OnDialogRequest") and var[1]:find("1260") then
+if findItem(1262) > 0 then
+SendPacket(2,[[
+action|dialog_return
+dialog_name|surgery
+buttonClicked|command_1
+]])
+LogToConsole("`1[SC]`6Scalple")
+    else
+        FChat("`2you don't have enough Scalple")
+    end
+return true
+end
+return false
+end)
+else
+    LogToConsole("`4Acces denied, User ID not registered.")
+end
