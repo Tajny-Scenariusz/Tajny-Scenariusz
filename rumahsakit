@@ -30,7 +30,7 @@ if isUserIdAllowed(userId) then
     LogToConsole("`2Access granted, User ID is registered.")
 Sleep(2000)
 
-FChat("`bAuto Surgery By Secret Community")
+FChat("`cAuto Surgery By Secret Community")
 AddHook("onvariant", "surg", function(var)
 if var[0]:find("OnDialogRequest") and var[1]:find("Status: `4Awake(.+)")then
     if findItem(1262) > 0 then
