@@ -20,5 +20,6 @@ allowedUserIds = {
     "730419",
     "638290", -- xiuzenn
     "356083", -- FAP
+    "764303", -- cendana
    
 }
