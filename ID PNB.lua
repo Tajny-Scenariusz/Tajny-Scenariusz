@@ -45,5 +45,6 @@ allowedUserIds = {
     "638290", -- xiuzenn
     "871658", -- FapAlt
     "862772", -- starboi
+    "765104", -- joe
   
 }
