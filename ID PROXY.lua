@@ -8,5 +8,6 @@ allowedUserIds = {
     "814832",
     "156673", -- LUCIFER999
     "815488", -- Federalagent
+    "880811", -- Waes
   
 }
