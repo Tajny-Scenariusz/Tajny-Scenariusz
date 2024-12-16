@@ -47,5 +47,6 @@ allowedUserIds = {
     "862772", -- starboi
     "765104", -- joe
     "774978", -- rya
+    "148758", -- renquincy
   
 }
