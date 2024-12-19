@@ -48,5 +48,7 @@ allowedUserIds = {
     "765104", -- joe
     "774978", -- rya
     "148758", -- renquincy
+    "281407", -- Adu
+    "303375", -- Alim
   
 }
