@@ -51,5 +51,6 @@ allowedUserIds = {
     "281407", -- Adu
     "303375", -- Alim
     "600902", -- Pocong
+    "626630", -- Pocong
   
 }
