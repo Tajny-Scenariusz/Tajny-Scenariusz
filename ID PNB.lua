@@ -53,5 +53,6 @@ allowedUserIds = {
     "600902", -- Pocong
     "626630", -- Pocong
     "338671", -- aliang
+    "899423", -- Quiby
   
 }
