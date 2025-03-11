@@ -56,5 +56,6 @@ allowedUserIds = {
     "899423", -- Quiby
     "761701", -- jack
     "206485", -- twca
+    "761644", -- adu
   
 }
