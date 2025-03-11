@@ -23,5 +23,6 @@ allowedUserIds = {
     "764303", -- cendana
     "148758", -- renquincy
     "600902", -- Pocong
+    "281407", -- adu
    
 }
