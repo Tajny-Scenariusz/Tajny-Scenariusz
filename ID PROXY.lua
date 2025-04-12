@@ -9,5 +9,6 @@ allowedUserIds = {
     "156673", -- LUCIFER999
     "815488", -- Federalagent
     "880811", -- Waes
+    "547921", -- TazzDung
   
 }
